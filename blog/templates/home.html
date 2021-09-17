@@ -1,0 +1,15 @@
+<h1>Blog Andando Na Luz</h1>
+
+<ul>
+{% for post in object_list %}
+    <li>
+        <div>
+            <img src="{post.thumbnail.png}"> 
+            <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> <br>
+            <small>{{ post.author.first_name }} - {{post.author.last_name }} - {{ post.author.email}}</small>
+            <p>{{ post.summary }}</p>
+        </div>
+        
+    <br/>
+{% endfor %}
+</ul>

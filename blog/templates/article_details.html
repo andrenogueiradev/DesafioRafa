@@ -1,0 +1,11 @@
+
+
+<h1>{{ post.title }}</h1>
+<small>By: {{ post.author.first_name }} 
+    {{post.author.name_name }} </small><br/>
+<hr>
+<br/>
+<iframe srcdoc="{{ post.body }}" frameborder="0" height="500" width="500"></iframe>
+
+<br/><br/>
+<a href="{% url 'home' %}">Back</a>
