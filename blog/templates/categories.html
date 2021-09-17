@@ -1,0 +1,21 @@
+<h1>{{ cats }} Categories</h1>
+
+<ul>
+{% for post in category_posts %}
+<li>
+    <div>
+        <div>{{ post.category }}</div>
+        <div>
+            <img src="{{post.thumbnail.url}}" height="100" width="100">
+        </div>
+        <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> <br>
+        <small>{{ post.author.first_name }} - {{post.author.last_name }} - {{ post.author.email}}</small>
+        <iframe srcdoc="{{ post.summary }}" ></iframe>
+    </div>
+    
+<br/>
+
+{% endfor %}
+</ul>
+
+
